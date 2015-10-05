@@ -1,8 +1,8 @@
 //
-//  ViewController.h
+//  VVCfftView.h
 //  k8
 //
-//  Created by Matthew Walker on 02/10/2015.
+//  Created by Matthew Walker on 05/10/2015.
 //  Copyright © 2015 Matthew Walker. All rights reserved.
 //
 //  This program is free software; you can redistribute it and/or
@@ -21,13 +21,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController {
-    IBOutlet NSTextField *vfoA;
-    IBOutlet NSTextView *consoleWindow;
-    IBOutlet NSTextField *softrockConsole;
+@interface VVCfftView : NSView {
+    
 }
 
-- (IBAction)setvfoA:(NSTextField *)sender;
++ (void) cleanUp;
 
 @end
-

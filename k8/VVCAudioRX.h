@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  VVCAudioRX.h
 //  k8
 //
 //  Created by Matthew Walker on 02/10/2015.
@@ -19,15 +19,24 @@
 //  along with this program; if not, write to the Free Software
 //  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
-@interface ViewController : NSViewController {
-    IBOutlet NSTextField *vfoA;
-    IBOutlet NSTextView *consoleWindow;
-    IBOutlet NSTextField *softrockConsole;
-}
+@interface VVCAudioRX : NSObject
 
-- (IBAction)setvfoA:(NSTextField *)sender;
+@property (nonatomic, readonly) uint16_t fftsize;
+@property (nonatomic, readonly) uint32_t samplingFrequency;
+@property (nonatomic, readwrite) uint8_t leftSampleShift;
+@property (nonatomic, readwrite) uint8_t rightSampleShift;
+@property (nonatomic, readwrite) bool swapIQ;
+
+- (instancetype)initWithSetup:(uint16_t)size sampleRate:(uint32_t)rate;
+
+- (void)updateSample;
+
+- (void)stopAudio;
+
+- (int32_t)getIsample:(uint16_t)arrayNum;
+
+- (int32_t)getQsample:(uint16_t)arrayNum;
 
 @end
-

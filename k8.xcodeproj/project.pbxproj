@@ -14,6 +14,12 @@
 		5E21A7B41BBEC1F600F5DE8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E21A7B21BBEC1F600F5DE8D /* Main.storyboard */; };
 		5E21A7BF1BBEC1F600F5DE8D /* k8Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E21A7BE1BBEC1F600F5DE8D /* k8Tests.m */; };
 		5E21A7CA1BBEC1F600F5DE8D /* k8UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E21A7C91BBEC1F600F5DE8D /* k8UITests.m */; };
+		5EAE6D8D1BC27F0B00D94A27 /* VVCfft.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAE6D8C1BC27F0B00D94A27 /* VVCfft.m */; settings = {ASSET_TAGS = (); }; };
+		5EAE6D911BC283C400D94A27 /* VVCfftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAE6D901BC283C400D94A27 /* VVCfftView.m */; settings = {ASSET_TAGS = (); }; };
+		5EAE6D9D1BC2924A00D94A27 /* libfftw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAE6D9C1BC2924A00D94A27 /* libfftw3.a */; settings = {ASSET_TAGS = (); }; };
+		5EAE6D9F1BC2926300D94A27 /* libusb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAE6D9E1BC2926300D94A27 /* libusb-1.0.a */; settings = {ASSET_TAGS = (); }; };
+		5EC117311BBED37B000EB146 /* VVCAudioRX.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC117301BBED37B000EB146 /* VVCAudioRX.m */; settings = {ASSET_TAGS = (); }; };
+		5EC117341BBED863000EB146 /* VVCSoftrockUSBCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC117331BBED863000EB146 /* VVCSoftrockUSBCtrl.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,18 @@
 		5E21A7C51BBEC1F600F5DE8D /* k8UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = k8UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E21A7C91BBEC1F600F5DE8D /* k8UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = k8UITests.m; sourceTree = "<group>"; };
 		5E21A7CB1BBEC1F600F5DE8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EAE6D8B1BC27E2D00D94A27 /* VVCfft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVCfft.h; sourceTree = "<group>"; };
+		5EAE6D8C1BC27F0B00D94A27 /* VVCfft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVCfft.m; sourceTree = "<group>"; };
+		5EAE6D8E1BC27FCC00D94A27 /* fftw3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fftw3.h; sourceTree = "<group>"; };
+		5EAE6D8F1BC2837100D94A27 /* VVCfftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVCfftView.h; sourceTree = "<group>"; };
+		5EAE6D901BC283C400D94A27 /* VVCfftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVCfftView.m; sourceTree = "<group>"; };
+		5EAE6D9C1BC2924A00D94A27 /* libfftw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfftw3.a; sourceTree = "<group>"; };
+		5EAE6D9E1BC2926300D94A27 /* libusb-1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libusb-1.0.a"; sourceTree = "<group>"; };
+		5EC1172F1BBED183000EB146 /* VVCAudioRX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVCAudioRX.h; sourceTree = "<group>"; };
+		5EC117301BBED37B000EB146 /* VVCAudioRX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVCAudioRX.m; sourceTree = "<group>"; };
+		5EC117321BBED7F4000EB146 /* VVCSoftrockUSBCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVCSoftrockUSBCtrl.h; sourceTree = "<group>"; };
+		5EC117331BBED863000EB146 /* VVCSoftrockUSBCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVCSoftrockUSBCtrl.m; sourceTree = "<group>"; };
+		5EC117351BBED8F2000EB146 /* libusb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libusb.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EAE6D9F1BC2926300D94A27 /* libusb-1.0.a in Frameworks */,
+				5EAE6D9D1BC2924A00D94A27 /* libfftw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +99,8 @@
 		5E21A79B1BBEC1F600F5DE8D = {
 			isa = PBXGroup;
 			children = (
+				5EAE6D9E1BC2926300D94A27 /* libusb-1.0.a */,
+				5EAE6D9C1BC2924A00D94A27 /* libfftw3.a */,
 				5E21A7A61BBEC1F600F5DE8D /* k8 */,
 				5E21A7BD1BBEC1F600F5DE8D /* k8Tests */,
 				5E21A7C81BBEC1F600F5DE8D /* k8UITests */,
@@ -100,6 +122,16 @@
 			isa = PBXGroup;
 			children = (
 				5E21A7A71BBEC1F600F5DE8D /* AppDelegate.h */,
+				5EC1172F1BBED183000EB146 /* VVCAudioRX.h */,
+				5EAE6D8B1BC27E2D00D94A27 /* VVCfft.h */,
+				5EAE6D8C1BC27F0B00D94A27 /* VVCfft.m */,
+				5EAE6D8F1BC2837100D94A27 /* VVCfftView.h */,
+				5EAE6D901BC283C400D94A27 /* VVCfftView.m */,
+				5EAE6D8E1BC27FCC00D94A27 /* fftw3.h */,
+				5EC117301BBED37B000EB146 /* VVCAudioRX.m */,
+				5EC117321BBED7F4000EB146 /* VVCSoftrockUSBCtrl.h */,
+				5EC117331BBED863000EB146 /* VVCSoftrockUSBCtrl.m */,
+				5EC117351BBED8F2000EB146 /* libusb.h */,
 				5E21A7A81BBEC1F600F5DE8D /* AppDelegate.m */,
 				5E21A7AD1BBEC1F600F5DE8D /* ViewController.h */,
 				5E21A7AE1BBEC1F600F5DE8D /* ViewController.m */,
@@ -266,8 +298,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EAE6D8D1BC27F0B00D94A27 /* VVCfft.m in Sources */,
+				5EC117341BBED863000EB146 /* VVCSoftrockUSBCtrl.m in Sources */,
+				5EAE6D911BC283C400D94A27 /* VVCfftView.m in Sources */,
 				5E21A7AF1BBEC1F600F5DE8D /* ViewController.m in Sources */,
 				5E21A7AC1BBEC1F600F5DE8D /* main.m in Sources */,
+				5EC117311BBED37B000EB146 /* VVCAudioRX.m in Sources */,
 				5E21A7A91BBEC1F600F5DE8D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +437,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = k8/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = VVC.k8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -413,6 +453,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = k8/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = VVC.k8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -489,6 +533,7 @@
 				5E21A7D01BBEC1F600F5DE8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E21A7D11BBEC1F600F5DE8D /* Build configuration list for PBXNativeTarget "k8Tests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +542,7 @@
 				5E21A7D31BBEC1F600F5DE8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E21A7D41BBEC1F600F5DE8D /* Build configuration list for PBXNativeTarget "k8UITests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +551,7 @@
 				5E21A7D61BBEC1F600F5DE8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

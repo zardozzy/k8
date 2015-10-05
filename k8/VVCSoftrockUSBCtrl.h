@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  VVCSoftrockUSBCtrl.h
 //  k8
 //
 //  Created by Matthew Walker on 02/10/2015.
@@ -19,15 +19,18 @@
 //  along with this program; if not, write to the Free Software
 //  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
-@interface ViewController : NSViewController {
-    IBOutlet NSTextField *vfoA;
-    IBOutlet NSTextView *consoleWindow;
-    IBOutlet NSTextField *softrockConsole;
-}
+@interface VVCSoftrockUSBCtrl : NSObject
 
-- (IBAction)setvfoA:(NSTextField *)sender;
+@property (nonatomic, readonly) uint64_t oscillatorFrequency;
+@property (nonatomic, readonly) uint64_t readFrequency;
+@property (nonatomic, readwrite) uint64_t writeFrequency;
+@property (nonatomic, readonly) NSString* firmwareRevision;
+@property (nonatomic) BOOL softrockPresent;
+
+- (void)closeSoftrock;
+
+- (void)handleUSBEvent;
 
 @end
-

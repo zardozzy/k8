@@ -1,6 +1,9 @@
 //
-//  ViewController.h
+//  VVCfft.h
 //  k8
+//
+//  Created by Matthew Walker on 05/10/2015.
+//  Copyright © 2015 Matthew Walker. All rights reserved.
 //
 //  Created by Matthew Walker on 02/10/2015.
 //  Copyright © 2015 Matthew Walker. All rights reserved.
@@ -19,15 +22,24 @@
 //  along with this program; if not, write to the Free Software
 //  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
-@interface ViewController : NSViewController {
-    IBOutlet NSTextField *vfoA;
-    IBOutlet NSTextView *consoleWindow;
-    IBOutlet NSTextField *softrockConsole;
-}
+@interface VVCfft : NSObject
 
-- (IBAction)setvfoA:(NSTextField *)sender;
+@property (nonatomic, readonly) uint16_t fftsize;
+
+- (instancetype)initWithFFTsize:(uint16_t)size;
+
+- (void)calcFFT;
+
+- (void)stopFFT;
+
+- (double)getIfft:(uint16_t)arrayNum;
+
+- (double)getQfft:(uint16_t)arrayNum;
+
+- (void)setIfft:(uint16_t)arrayNum iValue:(int64_t)value;
+
+- (void)setQfft:(uint16_t)arrayNum qValue:(int64_t)value;
 
 @end
-

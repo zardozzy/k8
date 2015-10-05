@@ -1,0 +1,26 @@
+k8 by Matt Walker M0VVC
+-----------------------
+
+My working setup:-
+
+ - Softrock RXTX Ensemble
+ - Behringer UCA222 USB Audio
+ - libusb v1.0.19
+ - fftw v3.3.4
+
+This (so far) is a simple spectrum analyzer for OS X, that currently supports Softrock SDR hardware.
+
+There is no binary install yet - you will need to download the entire Xcode project and build it.
+
+TODO:-
+
+ - Lots, so please get involved :-)
+ - Binary install
+ - Options menu
+ - FFT zoom
+ - Waterfall
+ - Demodulation
+ - Other hardware
+
+--
+73 de Matt
