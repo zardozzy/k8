@@ -33,10 +33,10 @@
     uint8_t leftTotalByteShift;
     uint8_t rightTotalByteShift;
     
-    float hanning_multiplier;
+    float hanningMultiplier;
     
-    int32_t *iSignalValue;
-    int32_t *qSignalValue;
+    float *iSignalValue;
+    float *qSignalValue;
     
     bool setupOK;
 }
@@ -116,8 +116,8 @@ static void HandleInputBuffer (
     
     capturedSample = (uint8_t*) malloc(sizeof(uint8_t) * (_fftsize + totalSampleShift) * frameByteMultiplier);
     
-    iSignalValue = (int32_t*) malloc(sizeof(int32_t) * _fftsize);
-    qSignalValue = (int32_t*) malloc(sizeof(int32_t) * _fftsize);
+    iSignalValue = (float*) malloc(sizeof(float) * _fftsize);
+    qSignalValue = (float*) malloc(sizeof(float) * _fftsize);
     
     aqData.mDataFormat.mFormatID = kAudioFormatLinearPCM;
     aqData.mDataFormat.mSampleRate = 48000.0;
@@ -171,7 +171,7 @@ static void HandleInputBuffer (
     // Put 1024 samples in the array
     for (int i = 0; i < _fftsize * frameByteMultiplier; i += frameByteMultiplier) {
         // Apply hanning window algorithm
-        hanning_multiplier = 0.5 * (1 - cos(2 * M_PI * sampleNumber / _fftsize - 1));
+        hanningMultiplier = 0.5 * (1 - cos(2 * M_PI * sampleNumber / _fftsize - 1));
         
         // Fill Left channel
         sample = 0;
@@ -183,7 +183,11 @@ static void HandleInputBuffer (
         // Below is for big endian
         sample = capturedSample[i + leftTotalByteShift] << 8;
         sample = sample | capturedSample[i + leftTotalByteShift + 1];
-        iSignalValue[sampleNumber] = hanning_multiplier * sample;
+        if (sample != 0) {
+            iSignalValue[sampleNumber] = hanningMultiplier * ((float)sample / 32767.0);
+        } else {
+            iSignalValue[sampleNumber] = 0;
+        }
         
         // Fill Right channel
         sample = 0;
@@ -195,14 +199,18 @@ static void HandleInputBuffer (
         // Below is for big endian
         sample = capturedSample[i + rightTotalByteShift + 2] << 8;
         sample = sample | capturedSample[i + rightTotalByteShift + 3];
-        qSignalValue[sampleNumber] = hanning_multiplier * sample;
+        if (sample != 0) {
+            qSignalValue[sampleNumber] = hanningMultiplier * ((float)sample / 32767.0);
+        } else {
+            qSignalValue[sampleNumber] = 0;
+        }
         
         // Increment the array index
         sampleNumber++;
     }
 }
 
-- (int32_t)getIsample:(uint16_t)arrayNum {
+- (float)getIsample:(uint16_t)arrayNum {
     if (_swapIQ) {
         return qSignalValue[arrayNum];
     } else {
@@ -210,7 +218,7 @@ static void HandleInputBuffer (
     }
 }
 
-- (int32_t)getQsample:(uint16_t)arrayNum {
+- (float)getQsample:(uint16_t)arrayNum {
     if (_swapIQ) {
         return iSignalValue[arrayNum];
     } else {

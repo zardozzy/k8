@@ -35,8 +35,8 @@
 
 - (void)stopAudio;
 
-- (int32_t)getIsample:(uint16_t)arrayNum;
+- (float)getIsample:(uint16_t)arrayNum;
 
-- (int32_t)getQsample:(uint16_t)arrayNum;
+- (float)getQsample:(uint16_t)arrayNum;
 
 @end

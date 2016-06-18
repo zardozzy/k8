@@ -111,7 +111,7 @@
     return 0;
 }
 
-- (void)setIfft:(uint16_t)arrayNum iValue:(int64_t)value {
+- (void)setIfft:(uint16_t)arrayNum iValue:(float)value {
     // Set I value in array
     if (arrayNum < _fftsize) {
         // Set it
@@ -119,7 +119,7 @@
     }
 }
 
-- (void)setQfft:(uint16_t)arrayNum qValue:(int64_t)value {
+- (void)setQfft:(uint16_t)arrayNum qValue:(float)value {
     // Set Q value in array
     if (arrayNum < _fftsize) {
         // Set it

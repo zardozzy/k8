@@ -22,7 +22,7 @@
     
     bool overlap, gridlines;
     
-    int32_t gridCalibration;
+    float gridCalibration;
     
     float signalCalibration;
 }
@@ -53,9 +53,8 @@
     
     fftRect  = CGRectMake (0, 0, fftsize, 400);
     
-    gridCalibration = 4; // 4 is 10dB per division
-    signalCalibration = 0.3; // Rough calibration made with Softrock Ensemble & UCA222
-    
+    gridCalibration = 4.0; // 4 is 10dB per division
+    signalCalibration = 4000.0; // Rough calibration made with Softrock Ensemble & UCA222
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(applicationWillTerminate:) name:NSApplicationWillTerminateNotification object:nil];
     
@@ -166,7 +165,8 @@
     
     for (int i = 1; i < (fftsize / 2); i++) {
         if (magnitude[i] != 0) {
-            CGContextMoveToPoint(context, i + (fftsize / 2), (10 * log10(magnitude[i]) * gridCalibration));
+            //NSLog(@"float is %f", (10 * log10(magnitude[i])) * gridCalibration);
+            CGContextMoveToPoint(context, i + (fftsize / 2), (10 * log10(magnitude[i])) * gridCalibration);
             CGContextAddLineToPoint(context, i + (fftsize / 2), 0);
             CGContextStrokePath(context);
         }
@@ -174,7 +174,7 @@
     
     for (int i = fftsize / 2; i < fftsize; i++) {
         if (magnitude[i] != 0) {
-            CGContextMoveToPoint(context, i - (fftsize / 2), (10 * log10(magnitude[i]) * gridCalibration));
+            CGContextMoveToPoint(context, i - (fftsize / 2), (10 * log10(magnitude[i])) * gridCalibration);
             CGContextAddLineToPoint(context, i - (fftsize / 2), 0);
             CGContextStrokePath(context);
         }

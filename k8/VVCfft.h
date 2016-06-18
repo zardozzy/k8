@@ -38,8 +38,8 @@
 
 - (double)getQfft:(uint16_t)arrayNum;
 
-- (void)setIfft:(uint16_t)arrayNum iValue:(int64_t)value;
+- (void)setIfft:(uint16_t)arrayNum iValue:(float)value;
 
-- (void)setQfft:(uint16_t)arrayNum qValue:(int64_t)value;
+- (void)setQfft:(uint16_t)arrayNum qValue:(float)value;
 
 @end
